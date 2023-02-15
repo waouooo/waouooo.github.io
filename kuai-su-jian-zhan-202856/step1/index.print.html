@@ -1,0 +1,302 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.110.0"><meta name=generator content="Relearn 5.10.2+tip"><meta name=description content="一个很哇塞的博客"><meta name=author content="waouooo"><title>Hugo+Github Pages快速搭建个人博客一：基础建站 :: waouooo</title><link href=https://waouooo.github.io/kuai-su-jian-zhan-202856/step1/index.html rel=canonical type=text/html title="Hugo+Github Pages快速搭建个人博客一：基础建站 :: waouooo"><link href=../../kuai-su-jian-zhan-202856/step1/index.xml rel=alternate type=application/rss+xml title="Hugo+Github Pages快速搭建个人博客一：基础建站 :: waouooo"><link href=../../images/favicon.png?1676445207 rel=icon type=image/png><link href=../../css/fontawesome-all.min.css?1676445207 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fontawesome-all.min.css?1676445207 rel=stylesheet></noscript><link href=../../css/auto-complete.css?1676445207 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/auto-complete.css?1676445207 rel=stylesheet></noscript><link href=../../css/perfect-scrollbar.min.css?1676445207 rel=stylesheet><link href=../../css/nucleus.css?1676445207 rel=stylesheet><link href=../../css/fonts.css?1676445207 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=../../css/fonts.css?1676445207 rel=stylesheet></noscript><link href=../../css/theme.css?1676445207 rel=stylesheet><link href=../../css/theme-relearn-light.css?1676445207 rel=stylesheet id=variant-style><link href=../../css/ie.css?1676445207 rel=stylesheet><link href=../../css/variant.css?1676445207 rel=stylesheet><link href=../../css/print.css?1676445207 rel=stylesheet media=print><link href=../../css/format-print.css?1676445207 rel=stylesheet><script src=../../js/url.js?1676445207></script>
+<script src=../../js/variant.js?1676445207></script>
+<script>window.index_js_url="../../index.search.js";var root_url="../../",baseUriFull,baseUri=root_url.replace(/\/$/,"");window.T_Copy_to_clipboard="Copy to clipboard",window.T_Copied_to_clipboard="Copied to clipboard!",window.T_Copy_link_to_clipboard="Copy link to clipboard",window.T_Link_copied_to_clipboard="Copied link to clipboard!",window.T_No_results_found="No results found for \u0022{0}\u0022",window.T_N_results_found="{1} results found for \u0022{0}\u0022",baseUriFull="https://waouooo.github.io/",window.variants&&variants.init(["relearn-light","relearn-dark","learn","neon","blue","green","red"])</script><script src=../../js/jquery.min.js?1676445207 defer></script></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=../../kuai-su-jian-zhan-202856/step1/index.html><div id=body class=default-animation><div id=sidebar-overlay></div><div id=toc-overlay></div><nav id=topbar class=highlightable dir=ltr><div><div id=breadcrumbs><span id=sidebar-toggle-span><a href=# id=sidebar-toggle title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a></span><ol class=links itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../index.html><span itemprop=name>waouooo</span></a><meta itemprop=position content="1">></li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=../../kuai-su-jian-zhan-202856/index.html><span itemprop=name>快速建站</span></a><meta itemprop=position content="2">></li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Hugo+Github Pages快速搭建个人博客一：基础建站</span><meta itemprop=position content="3"></li></ol></div></div></nav><main id=body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><div id=head-tags><div class=tags><a class=tag-link href=../../tags/giscus/index.html>giscus</a>
+<a class=tag-link href=../../tags/github-pages/index.html>Github Pages</a>
+<a class=tag-link href=../../tags/hugo/index.html>Hugo</a>
+<a class=tag-link href=../../tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html>个人博客</a>
+<a class=tag-link href=../../tags/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%99/index.html>快速建站</a></div></div><article class=default><h1 id=hugogithub-pages快速搭建个人博客一基础建站>Hugo+Github Pages快速搭建个人博客一：基础建站</h1><h3 id=需求创建一个个人博客>需求：创建一个个人博客</h3><p>对程序员来说个人博客是一个非常常见的东西，可以在上面记录自己的学习积累，同时也可以通过互联网分享给大家。个人博客建站的方式有很多，本文不做横向比较，本着白嫖与图方便并兼顾可用性强的角度，选择使用Hugo + Github Pages + Giscus 进行建站。</p><h3 id=工具简介>工具简介：</h3><h4 id=hugohttpsgohugoio><a href=https://gohugo.io/ target=_blank>Hugo</a>：</h4><blockquote><p>Hugo 是一个golang编写的静态网站生成器，可以从markdown格式生成。</p></blockquote><h4 id=github-pageshttpspagesgithubcom><a href=https://pages.github.com/ target=_blank>Github Pages</a></h4><blockquote><p>Github Pages 是Github提供的静态站点托管服务，可以通过仓库（repository）的形式托管静态网站，同类型的还有国内的Gitee Pages</p></blockquote><h4 id=giscushttpsgiscusappzh-cn><a href=https://giscus.app/zh-CN target=_blank>Giscus</a></h4><blockquote><p>Giscus 是一个站点评论系统，基于Github的Discussions功能</p></blockquote><h3 id=创建github-pages>创建Github Pages</h3><ol><li>登录github 创建一个&lt;username>.github.io的仓库
+<a href=#0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128224108-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128224108.png alt=创建仓库 style=height:auto;width:auto loading=lazy></a>
+<a href=javascript:history.back(); class=lightbox id=0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128224108-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128224108.png alt=创建仓库 loading=lazy></a></li><li>使用&lt;username>.github.io  作为存储库名称。 将 <code>username</code> 替换为你的 GitHub 用户名。 例如，如果用户名为 <code>waouooo</code>，则存储库名称应为 <code>waouooo.github.io</code>。
+<a href=#0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128225645-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128225645.png alt style=height:auto;width:auto loading=lazy></a>
+<a href=javascript:history.back(); class=lightbox id=0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128225645-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128225645.png alt loading=lazy></a>
+（ps: 为了保证Github Pages 的可见性，普通用户需要将仓库设置为public，若想使用private，也可以氪金）</li><li>点击Settings配置Github Pages
+<a href=#0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128225035-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128225035.png alt style=height:auto;width:auto loading=lazy></a>
+<a href=javascript:history.back(); class=lightbox id=0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128225035-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128225035.png alt loading=lazy></a></li><li>查看Github Pages 配置
+<a href=#0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128230001-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128230001.png alt style=height:auto;width:auto loading=lazy></a>
+<a href=javascript:history.back(); class=lightbox id=0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128230001-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128230001.png alt loading=lazy></a></li><li>返回仓库主页查看部署状态：若出现绿色的勾勾✅则表示部署完成，可以通过访问<a href=https://waouooo.github.io/ target=_blank>https://waouooo.github.io</a> 来查看，若是其他标志，也可以点击查看具体的工作流流程。
+<a href=#0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128230205-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128230205.png alt style=height:auto;width:auto loading=lazy></a>
+<a href=javascript:history.back(); class=lightbox id=0-https--raw-githubusercontent-com-zhou-yi-git-picture-bed-master-images-202301-20230128230205-png><img src=https://raw.githubusercontent.com/zhou-yi-git/picture-bed/master/images/202301/20230128230205.png alt loading=lazy></a></li></ol><h3 id=使用hugo-初始化站点>使用Hugo 初始化站点</h3><ol><li>macOS安装hugo， 其他操作系统安装方式可以参考<a href=https://gohugo.io/installation/ target=_blank>官方文档</a></li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>brew install hugo
+</span></span></code></pre></div><ol start=2><li>安装完成后查看当前安装的版本</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hugo version
+</span></span><span class=line><span class=cl><span class=c1># 输出: hugo v0.105.0+extended darwin/amd64 BuildDate=unknown</span>
+</span></span></code></pre></div><ol start=3><li>初始化站点</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hugo new site waouooo
+</span></span><span class=line><span class=cl>Congratulations! Your new Hugo site is created in /Users/waouooo/Workspace/waouooo.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Just a few more steps and you<span class=err>&#39;</span>re ready to go:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>1. Download a theme into the same-named folder.
+</span></span><span class=line><span class=cl>   Choose a theme from https://themes.gohugo.io/ or
+</span></span><span class=line><span class=cl>   create your own with the <span class=s2>&#34;hugo new theme &lt;THEMENAME&gt;&#34;</span> command.
+</span></span><span class=line><span class=cl>2. Perhaps you want to add some content. You can add single files
+</span></span><span class=line><span class=cl>   with <span class=s2>&#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;</span>.
+</span></span><span class=line><span class=cl>3. Start the built-in live server via <span class=s2>&#34;hugo server&#34;</span>.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Visit https://gohugo.io/ <span class=k>for</span> quickstart guide and full documentation.
+</span></span></code></pre></div><ol start=4><li>进入站点目录并以git submodule模式添加主题，本站点使用主题为hugo-theme-relearn(<a href=https://mcshelby.github.io/hugo-theme-relearn/index.html target=_blank>官方文档</a>), 其他主题可进入<a href=https://themes.gohugo.io/ target=_blank>官网主题</a> 选择</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=nb>cd</span> waouooo
+</span></span><span class=line><span class=cl><span class=c1># 使用git 初始化仓库</span>
+</span></span><span class=line><span class=cl>git init
+</span></span><span class=line><span class=cl><span class=c1># 输出: 已初始化空的 Git 仓库于 /Users/zhou/Workspace/waouooo/waouooo/.git/</span>
+</span></span><span class=line><span class=cl>git submodule add https://github.com/McShelby/hugo-theme-relearn.git themes/hugo-theme-relearn
+</span></span></code></pre></div><ol start=5><li>从主题exampleSite目录中拷贝配置</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>cp themes/hugo-theme-relearn/exampleSite/config.toml .
+</span></span></code></pre></div><ol start=6><li>修改配置文件baseURL与：themesdir</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=c># this is a required setting for this theme to appear on https://themes.gohugo.io/</span>
+</span></span><span class=line><span class=cl><span class=c># change this to a value appropriate for you; if your site is served from a subdirectory</span>
+</span></span><span class=line><span class=cl><span class=c># set it like &#34;https://example.com/mysite/&#34;</span>
+</span></span><span class=line><span class=cl><span class=c># 修改此处✅</span>
+</span></span><span class=line><span class=cl><span class=nx>baseURL</span> <span class=p>=</span> <span class=s2>&#34;https://waouooo.github.io/&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># canonicalization will only be used for the sitemap.xml and index.xml files;</span>
+</span></span><span class=line><span class=cl><span class=c># if set to false, a site served from a subdirectory will generate wrong links</span>
+</span></span><span class=line><span class=cl><span class=c># inside of the above mentioned files; if you serve the page from the servers root</span>
+</span></span><span class=line><span class=cl><span class=c># you are free to set the value to false as recommended by the official Hugo documentation</span>
+</span></span><span class=line><span class=cl><span class=nx>canonifyURLs</span> <span class=p>=</span> <span class=kc>true</span> <span class=c># true -&gt; all relative URLs would instead be canonicalized using baseURL</span>
+</span></span><span class=line><span class=cl><span class=c># required value to serve this page from a webserver AND the file system;</span>
+</span></span><span class=line><span class=cl><span class=c># if you don&#39;t want to serve your page from the file system, you can also set this value</span>
+</span></span><span class=line><span class=cl><span class=c># to false</span>
+</span></span><span class=line><span class=cl><span class=nx>relativeURLs</span> <span class=p>=</span> <span class=kc>true</span> <span class=c># true -&gt; rewrite all relative URLs to be relative to the current content</span>
+</span></span><span class=line><span class=cl><span class=c># if you set uglyURLs to false, this theme will append &#39;index.html&#39; to any branch bundle link</span>
+</span></span><span class=line><span class=cl><span class=c># so your page can be also served from the file system; if you don&#39;t want that,</span>
+</span></span><span class=line><span class=cl><span class=c># set disableExplicitIndexURLs=true in the [params] section</span>
+</span></span><span class=line><span class=cl><span class=nx>uglyURLs</span> <span class=p>=</span> <span class=kc>false</span>     <span class=c># true -&gt; basic/index.html -&gt; basic.html</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># the directory where Hugo reads the themes from; this is specific to your</span>
+</span></span><span class=line><span class=cl><span class=c># installation and most certainly needs be deleted or changed</span>
+</span></span><span class=line><span class=cl><span class=c># 修改此处✅</span>
+</span></span><span class=line><span class=cl><span class=nx>themesdir</span> <span class=p>=</span> <span class=s2>&#34;./themes&#34;</span>
+</span></span><span class=line><span class=cl><span class=c># yeah, well, obviously a mandatory setting for your site, if you want to</span>
+</span></span><span class=line><span class=cl><span class=c># use this theme ;-)</span>
+</span></span><span class=line><span class=cl><span class=nx>theme</span> <span class=p>=</span> <span class=s2>&#34;hugo-theme-relearn&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># the main language of this site; also an automatic pirrrate translation is</span>
+</span></span><span class=line><span class=cl><span class=c># available in this showcase</span>
+</span></span><span class=line><span class=cl><span class=nx>languageCode</span> <span class=p>=</span> <span class=s2>&#34;en&#34;</span>
+</span></span><span class=line><span class=cl><span class=c># make sure your defaultContentLanguage is the first one in the [Languages]</span>
+</span></span><span class=line><span class=cl><span class=c># array below, as the theme needs to make assumptions on it</span>
+</span></span><span class=line><span class=cl><span class=nx>defaultContentLanguage</span> <span class=p>=</span> <span class=s2>&#34;en&#34;</span>
+</span></span><span class=line><span class=cl><span class=c># if you want to get rrrid o&#39; ourrr pirrrates nonsense uncomment th&#39; next line</span>
+</span></span><span class=line><span class=cl><span class=c># disableLanguages = [&#39;pir&#39;]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># the site&#39;s title of this showcase; you should change this ;-)</span>
+</span></span><span class=line><span class=cl><span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;Hugo Relearn Documentation&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># We disable this for testing the exampleSite; you must do so too</span>
+</span></span><span class=line><span class=cl><span class=c># if you want to use the themes parameter disableGeneratorVersion=true;</span>
+</span></span><span class=line><span class=cl><span class=c># otherwise Hugo will create a generator tag on your home page</span>
+</span></span><span class=line><span class=cl><span class=nx>disableHugoGeneratorInject</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>outputs</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=c># add JSON to the home to support lunr search; This is a mandatory setting</span>
+</span></span><span class=line><span class=cl>  <span class=c># for the search functionality</span>
+</span></span><span class=line><span class=cl>  <span class=c># add PRINT to home, section and page to activate the feature to print whole</span>
+</span></span><span class=line><span class=cl>  <span class=c># chapters</span>
+</span></span><span class=line><span class=cl>  <span class=nx>home</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;HTML&#34;</span><span class=p>,</span> <span class=s2>&#34;RSS&#34;</span><span class=p>,</span> <span class=s2>&#34;PRINT&#34;</span><span class=p>,</span> <span class=s2>&#34;SEARCH&#34;</span><span class=p>,</span> <span class=s2>&#34;SEARCHPAGE&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=nx>section</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;HTML&#34;</span><span class=p>,</span> <span class=s2>&#34;RSS&#34;</span><span class=p>,</span> <span class=s2>&#34;PRINT&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=nx>page</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;HTML&#34;</span><span class=p>,</span> <span class=s2>&#34;RSS&#34;</span><span class=p>,</span> <span class=s2>&#34;PRINT&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>markup</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>markup</span><span class=p>.</span><span class=nx>highlight</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=c># if `guessSyntax = true`, there will be no unstyled code even if no language</span>
+</span></span><span class=line><span class=cl>    <span class=c># was given BUT Mermaid and Math codefences will not work anymore! So this is a</span>
+</span></span><span class=line><span class=cl>    <span class=c># mandatory setting for your site if you want to use Mermaid or Math codefences</span>
+</span></span><span class=line><span class=cl>    <span class=nx>guessSyntax</span> <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c># here in this showcase we use our own modified chroma syntax highlightning style</span>
+</span></span><span class=line><span class=cl>    <span class=c># which is imported in theme-relearn-light.css / theme-relearn-dark.css;</span>
+</span></span><span class=line><span class=cl>    <span class=c># if you want to use a predefined style instead:</span>
+</span></span><span class=line><span class=cl>    <span class=c># - remove the following `noClasses`</span>
+</span></span><span class=line><span class=cl>    <span class=c># - set the following `style` to a predefined style name</span>
+</span></span><span class=line><span class=cl>    <span class=c># - remove the `@import` of the self-defined chroma stylesheet from your CSS files</span>
+</span></span><span class=line><span class=cl>    <span class=c>#   (here eg.: theme-relearn-light.css / theme-relearn-dark.css)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>noClasses</span> <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>    <span class=c># style = &#34;tango&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>markup</span><span class=p>.</span><span class=nx>goldmark</span><span class=p>.</span><span class=nx>renderer</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=c># activated for this showcase to use HTML and JavaScript; decide on your own needs;</span>
+</span></span><span class=line><span class=cl>    <span class=c># if in doubt, remove this line</span>
+</span></span><span class=line><span class=cl>    <span class=nx>unsafe</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># allows `hugo server` to display this showcase in IE11; this is used for testing, as we</span>
+</span></span><span class=line><span class=cl><span class=c># are still supporting IE11 - although with degraded experience; if you don&#39;t care about</span>
+</span></span><span class=line><span class=cl><span class=c># `hugo server` or browsers of ancient times, fell free to remove this whole block</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>server</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>server</span><span class=p>.</span><span class=nx>headers</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>for</span> <span class=p>=</span> <span class=s2>&#34;**.html&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nx>server</span><span class=p>.</span><span class=nx>headers</span><span class=p>.</span><span class=nx>values</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>       <span class=nx>X-UA-Compatible</span> <span class=p>=</span> <span class=s2>&#34;IE=edge&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># showcase of the menu shortcuts; you can use relative URLs linking</span>
+</span></span><span class=line><span class=cl><span class=c># to your content or use fully-quallified URLs to link outside of</span>
+</span></span><span class=line><span class=cl><span class=c># your project</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>Languages</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>en</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;Hugo Relearn Theme&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>    <span class=nx>languageName</span> <span class=p>=</span> <span class=s2>&#34;English&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>landingPageName</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-home&#39;&gt;&lt;/i&gt; Home&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>en</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fab fa-fw fa-github&#39;&gt;&lt;/i&gt; GitHub repo&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;ds&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;https://github.com/McShelby/hugo-theme-relearn&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>en</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-camera&#39;&gt;&lt;/i&gt; Showcases&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;more/showcase/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>11</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>en</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-bookmark&#39;&gt;&lt;/i&gt; Hugo Documentation&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;hugodoc&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;https://gohugo.io/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>20</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>en</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-bullhorn&#39;&gt;&lt;/i&gt; Credits&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;more/credits/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>30</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>en</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-tags&#39;&gt;&lt;/i&gt; Tags&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;tags/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>40</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c># this is ourrr way t&#39; showcase th&#39; multilang settings by</span>
+</span></span><span class=line><span class=cl>  <span class=c># doing autotrrranlat&#39;n of th&#39; english content; we are</span>
+</span></span><span class=line><span class=cl>  <span class=c># lazy and don&#39;t supporrt furrrther trrranslations; arrr,</span>
+</span></span><span class=line><span class=cl>  <span class=c># don&#39;t take it t&#39; serrrious, fello&#39;; it&#39;s prrretty hacky and:</span>
+</span></span><span class=line><span class=cl>  <span class=c># NOT MEANT FER PRRRODUCTION! ARRR!</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>pir</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;Cap&#39;n Hugo Relearrrn Theme&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl>    <span class=nx>languageName</span> <span class=p>=</span> <span class=s2>&#34;Arrr! ☠ Pirrrates ☠&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>landingPageName</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-home&#39;&gt;&lt;/i&gt; Arrr! Home&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>pir</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fab fa-fw fa-github&#39;&gt;&lt;/i&gt; GitHub repo&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;ds&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;https://github.com/McShelby/hugo-theme-relearn&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>pir</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-camera&#39;&gt;&lt;/i&gt; Showcases&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;more/showcase/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>11</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>pir</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-bookmark&#39;&gt;&lt;/i&gt; Cap&#39;n Hugo Documentat&#39;n&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;hugodoc&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;https://gohugo.io/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>20</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>pir</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-bullhorn&#39;&gt;&lt;/i&gt; Crrredits&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;more/credits/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>30</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>Languages</span><span class=p>.</span><span class=nx>pir</span><span class=p>.</span><span class=nx>menu</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;&lt;i class=&#39;fas fa-fw fa-tags&#39;&gt;&lt;/i&gt; Arrr! Tags&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;tags/&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>40</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># mounts are only needed in this showcase to access the publicly available screenshots;</span>
+</span></span><span class=line><span class=cl><span class=c># remove this section if you don&#39;t need further mounts</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>module</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;archetypes&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;archetypes&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;assets&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;assets&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;content&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;content&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;data&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;data&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;i18n&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;i18n&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;../images&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;content/images&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;layouts&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;layouts&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=nx>module</span><span class=p>.</span><span class=nx>mounts</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>source</span> <span class=p>=</span> <span class=s1>&#39;static&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>target</span> <span class=p>=</span> <span class=s1>&#39;static&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># settings specific to this theme&#39;s features; choose to your likings and</span>
+</span></span><span class=line><span class=cl><span class=c># consult this documentation for explaination</span>
+</span></span><span class=line><span class=cl><span class=c># 修改此处✅ 按需修改</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>params</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=nx>editURL</span> <span class=p>=</span> <span class=s2>&#34;https://github.com/waouooo//edit/main/exampleSite/content/&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>description</span> <span class=p>=</span> <span class=s2>&#34;waouooo: 一个很哇塞的博客&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>author</span> <span class=p>=</span> <span class=s2>&#34;waouooo&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>showVisitedLinks</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=nx>collapsibleMenu</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=nx>disableBreadcrumb</span> <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>  <span class=nx>disableInlineCopyToClipBoard</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=nx>disableNextPrev</span> <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>  <span class=nx>disableLandingPageButton</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=nx>titleSeparator</span> <span class=p>=</span> <span class=s2>&#34;::&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>themeVariant</span> <span class=p>=</span> <span class=p>[</span> <span class=s2>&#34;relearn-light&#34;</span><span class=p>,</span> <span class=s2>&#34;relearn-dark&#34;</span><span class=p>,</span> <span class=s2>&#34;learn&#34;</span><span class=p>,</span> <span class=s2>&#34;neon&#34;</span><span class=p>,</span> <span class=s2>&#34;blue&#34;</span><span class=p>,</span> <span class=s2>&#34;green&#34;</span><span class=p>,</span> <span class=s2>&#34;red&#34;</span> <span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=nx>disableSeoHiddenPages</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=c># this is for the stylesheet generator to allow for interactivity in Mermaid</span>
+</span></span><span class=line><span class=cl>  <span class=c># graphs; you usually will not need it and you should remove this for</span>
+</span></span><span class=line><span class=cl>  <span class=c># security reasons</span>
+</span></span><span class=line><span class=cl>  <span class=nx>mermaidInitialize</span> <span class=p>=</span> <span class=s2>&#34;{ \&#34;securityLevel\&#34;: \&#34;loose\&#34; }&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>additionalContentLanguage</span> <span class=p>=</span> <span class=p>[</span> <span class=s2>&#34;en&#34;</span> <span class=p>]</span>
+</span></span></code></pre></div><ol start=7><li>添加主页文章内容
+创建文章draft默认为true，修改为false可以展示出来</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hugo new _index.md
+</span></span><span class=line><span class=cl><span class=c1># 输出：Content &#34;/Users/waouooo/Workspace/waouooo/content/_index.md&#34; created</span>
+</span></span><span class=line><span class=cl>vim /Users/waouooo/Workspace/waouooo/content/_index.md
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: <span class=s2>&#34;waouooo&#34;</span>
+</span></span><span class=line><span class=cl>date: 2023-01-28T23:30:32+08:00
+</span></span><span class=line><span class=cl>draft: <span class=nb>false</span>
+</span></span><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>### waouooo::一个很哇塞的博客</span>
+</span></span></code></pre></div><ol start=8><li>启动博客并访问地址查看</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hugo serve
+</span></span><span class=line><span class=cl>port <span class=m>1313</span> already in use, attempting to use an available port
+</span></span><span class=line><span class=cl>Start building sites …
+</span></span><span class=line><span class=cl>hugo v0.105.0+extended darwin/amd64 <span class=nv>BuildDate</span><span class=o>=</span>unknown
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                   <span class=p>|</span> EN  <span class=p>|</span> PIR
+</span></span><span class=line><span class=cl>-------------------+-----+------
+</span></span><span class=line><span class=cl>  Pages            <span class=p>|</span>  <span class=m>10</span> <span class=p>|</span>  <span class=m>10</span>
+</span></span><span class=line><span class=cl>  Paginator pages  <span class=p>|</span>   <span class=m>0</span> <span class=p>|</span>   <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Non-page files   <span class=p>|</span>   <span class=m>0</span> <span class=p>|</span>   <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Static files     <span class=p>|</span> <span class=m>191</span> <span class=p>|</span> <span class=m>191</span>
+</span></span><span class=line><span class=cl>  Processed images <span class=p>|</span>   <span class=m>0</span> <span class=p>|</span>   <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Aliases          <span class=p>|</span>   <span class=m>1</span> <span class=p>|</span>   <span class=m>0</span>
+</span></span><span class=line><span class=cl>  Sitemaps         <span class=p>|</span>   <span class=m>2</span> <span class=p>|</span>   <span class=m>1</span>
+</span></span><span class=line><span class=cl>  Cleaned          <span class=p>|</span>   <span class=m>0</span> <span class=p>|</span>   <span class=m>0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Built in <span class=m>177</span> ms
+</span></span><span class=line><span class=cl>Watching <span class=k>for</span> changes in /Users/waouooo/Workspace/waouooo/<span class=o>{</span>archetypes,content,data,layouts,static,themes<span class=o>}</span>
+</span></span><span class=line><span class=cl>Watching <span class=k>for</span> config changes in /Users/waouooo/Workspace/waouooo/config.toml, /Users/waouooo/Workspace/waouooo/themes/hugo-theme-relearn/config.toml
+</span></span><span class=line><span class=cl>Environment: <span class=s2>&#34;development&#34;</span>
+</span></span><span class=line><span class=cl>Serving pages from memory
+</span></span><span class=line><span class=cl>Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+</span></span><span class=line><span class=cl>Web Server is available at http://localhost:64363/ <span class=o>(</span><span class=nb>bind</span> address 127.0.0.1<span class=o>)</span>
+</span></span><span class=line><span class=cl>Press Ctrl+C to stop
+</span></span></code></pre></div><ol start=9><li>添加章节或者文章
+详细内容可参考relearn<a href=https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html#create-your-first-chapter-page target=_blank>官网配置</a></li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 添加章节</span>
+</span></span><span class=line><span class=cl>hugo new --kind chapter basics/_index.md
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 创建文章内容</span>
+</span></span><span class=line><span class=cl>hugo new basics/first-content.md
+</span></span><span class=line><span class=cl>hugo new basics/second-content/_index.md
+</span></span></code></pre></div><ol start=10><li>以git submodule形式添加github pages托管的仓库, (使用ssh协议方便推送)</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>git submodule add git@github.com:waouooo/waouooo.github.io.git dist
+</span></span></code></pre></div><ol start=11><li>生成静态文件
+hugo 命令默认将静态文件生成至public目录当中，我们可以通过-d指定生成的目录</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hugo -d dist
+</span></span></code></pre></div><ol start=12><li>推送到github， 等待部署工作流执行完成查看页面</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=nb>cd</span> dist
+</span></span><span class=line><span class=cl>git add .
+</span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;add hugo static pages&#34;</span>
+</span></span></code></pre></div><h3 id=参考链接>参考链接</h3><p><a href=https://docs.github.com/zh/pages/quickstart target=_blank>1. GitHub Pages 快速入门</a></p><p><a href=https://gohugo.io/getting-started/quick-start/ target=_blank>2. Hugo Quick Start</a></p><footer class=footline><div><style>#comment{padding:8rem 0 2rem}#comment .vemoji{max-width:1.5em;max-height:1.5em}</style><div id=comment><script src=https://giscus.app/client.js data-repo=waouooo/waouooo.github.io data-repo-id=R_kgDOI25j-A data-category=General data-category-id=DIC_kwDOI25j-M4CT3hG data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=dark data-lang=zh-CN crossorigin=anonymous data-term=1046 async></script></div><noscript>Please enable JavaScript to view the comments powered by giscus.</noscript></div></footer></article></div></main></div><script src=../../js/clipboard.min.js?1676445207 defer></script>
+<script src=../../js/perfect-scrollbar.min.js?1676445207 defer></script>
+<script src=../../js/featherlight.min.js?1676445207 defer></script>
+<script src=../../js/theme.js?1676445207 defer></script></body></html>
